@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Farm2CApi.DataAccess\Farm2CApi.DataAccess.csproj" />
+    <ProjectReference Include="..\Farm2CApi.Dtos\Farm2CApi.Dtos.csproj" />
+  </ItemGroup>
+
+</Project>
