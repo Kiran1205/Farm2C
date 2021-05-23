@@ -19,5 +19,9 @@ namespace Farm2CApi.DataAccess.Interface
         List<Quantity> GetQuantitys();
 
         Item SaveItem(Item itemsDto);
+
+        ItemPrice GettItemPriceById(int ItemPriceId);
+
+        Item GetItemById(int ItemId);
     }
 }

@@ -19,6 +19,8 @@ namespace Farm2CApi.Entities
 
         public string Address { get; set; }
 
+        public string Address1 { get; set; }
+
         public string State { get; set; }
 
         public string LandMark { get; set; }

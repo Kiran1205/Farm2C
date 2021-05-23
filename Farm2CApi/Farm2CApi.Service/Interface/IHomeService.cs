@@ -8,5 +8,7 @@ namespace Farm2CApi.Service.Interface
         List<ItemCategoryDto> GetBasketItems();
 
         ItemDto SaveItem(ItemDto itemsDto);
+
+        BasketDto GetBasketSelectedItems(List<string> itemPriceList);
     }
 }

@@ -10,6 +10,8 @@ namespace Farm2CApi.Dtos
 
         public string PhoneNumber { get; set; }
 
+        public string UserPassword { get; set; }
+
         public override bool Equals(object obj)
         {
             return obj is UserInfoDto info &&

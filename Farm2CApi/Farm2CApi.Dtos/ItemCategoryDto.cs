@@ -13,9 +13,9 @@ namespace Farm2CApi.Dtos
         
         public List<ItemDto> ItemDtoList { get; set; }
 
-        public List<QuantityDto> ListQunatityDto { get; set; }
+        //public List<QuantityDto> ListQunatityDto { get; set; }
 
-        public List<UnitsDto> ListUnitsDto { get; set; }
+        //public List<UnitsDto> ListUnitsDto { get; set; }
 
     }
 }

@@ -15,6 +15,7 @@ namespace Farm2CApi.Entities.Mapping
         public virtual DbSet<Units> Units { get; set; }
         public virtual DbSet<Quantity> Quantity { get; set; }
 
+        public virtual DbSet<UserInfo> UserInfo { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

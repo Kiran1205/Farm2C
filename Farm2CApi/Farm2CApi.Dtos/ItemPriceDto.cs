@@ -17,6 +17,10 @@ namespace Farm2CApi.Dtos
 
         public DateTime EndDate { get; set; }
 
+        public string PriceCode { get; set; }
+
+        public bool DefaultSelection { get; set; }
+
         public override bool Equals(object obj)
         {
             return obj is ItemPriceDto price &&

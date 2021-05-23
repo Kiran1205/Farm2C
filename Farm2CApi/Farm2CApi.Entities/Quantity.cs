@@ -9,7 +9,7 @@ namespace Farm2CApi.Entities
         public int QuantityID { get; set; }
 
         public string QuantityType { get; set; }
-        public string UnitID { get; set; }
+        public int UnitID { get; set; }
 
         public string Description { get; set; }
 

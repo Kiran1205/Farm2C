@@ -31,6 +31,12 @@ namespace Farm2CApi.DataAccess
             var results = _idapper.GetAll<Item>("select * from Items where Active = 'true'", dbparams, System.Data.CommandType.Text);
             return results;
         }
+        public Item GetItemById(int ItemId)
+        {
+            DynamicParameters dbparams = new DynamicParameters();
+            var results = _idapper.Get<Item>($"select * from Items where Active = 'true' and  ItemID = {ItemId}", dbparams, System.Data.CommandType.Text);
+            return results;
+        }
         public List<Item> GetItems(int itemCategoryID)
         {
             DynamicParameters dbparams = new DynamicParameters();
@@ -47,9 +53,17 @@ namespace Farm2CApi.DataAccess
         public List<ItemPrice> GetListItemPrice(DateTime currentDate, int ItemId)
         {
             DynamicParameters dbparams = new DynamicParameters();
-            var results = _idapper.GetAll<ItemPrice>($"select * from ItemPrice where ItemID = {ItemId} and {currentDate} between StartDate and EndDate", dbparams, System.Data.CommandType.Text);
+            var results = _idapper.GetAll<ItemPrice>($"select * from ItemPrice where ItemID = {ItemId} and '{currentDate:yyyy-MM-dd}' between StartDate and EndDate", dbparams, System.Data.CommandType.Text);
             return results;
         }
+
+        public ItemPrice GettItemPriceById(int ItemPriceId)
+        {
+            DynamicParameters dbparams = new DynamicParameters();
+            var results = _idapper.Get<ItemPrice>($"select * from ItemPrice where ItemPriceId = {ItemPriceId}", dbparams, System.Data.CommandType.Text);
+            return results;
+        }
+
 
         public List<Quantity> GetQuantitys()
         {

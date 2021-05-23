@@ -12,11 +12,13 @@ namespace Farm2CApi.Entities
 
         public int QuantityID { get; set; }
 
-        public decimal Price { get; set; }
+        public double Price { get; set; }
 
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
+
+        public bool DefaultSelection { get; set; }
 
         public override bool Equals(object obj)
         {

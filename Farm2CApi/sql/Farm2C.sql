@@ -33,6 +33,7 @@ Active bit
 go
 
 INSERT INTO Units(UnitID,UnitName,Description,Active) Values (1,'KG','Killo Grams',1);
+INSERT INTO Units(UnitID,UnitName,Description,Active) Values (2,'Pcs','Pices',1);
 
 Go
 
@@ -46,6 +47,10 @@ Description varchar(150)
 go
 insert into Quantity (QuantityType,UnitID,Description) values ('1',1,'1 KG');
 insert into Quantity (QuantityType,UnitID,Description) values ('1/2',1,'1/2 KG');
+
+insert into Quantity (QuantityType,UnitID,Description) values ('6',2,'pices');
+
+insert into Quantity (QuantityType,UnitID,Description) values ('12',2,'pices');
 
 GO
 
@@ -69,7 +74,8 @@ ItemID int not null,
 QuantityID int not null,
 Price decimal not null,
 StartDate DateTime not null,
-EndDate DateTime not null
+EndDate DateTime not null,
+DefaultSelection bit
 )
 go
 
@@ -97,6 +103,7 @@ create table UserInfo
 UserInfoID int not null identity,
 UserName varchar(50),
 PhoneNumber varchar(20),
+UserPassword varchar(max),
 )
 GO
 Create table UserAddress
@@ -108,6 +115,7 @@ PhoneNumber varchar(20) not null,
 AlternatePhoneNumber varchar(20) not null,
 PinCode int not null,
 Address nvarchar(max),
+Address1 nvarchar(max),
 State varchar(50),
 LandMark varchar(50),
 DefaultAddress BIT,

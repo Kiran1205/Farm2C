@@ -42,12 +42,21 @@ namespace Farm2CApi
 
             services.AddScoped<IHomeService, HomeService>();
 
+            services.AddScoped<IUserDataAccess, UserDataAccess>();
 
+
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(x => x
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+              .AllowAnyHeader());
+            //app.UseAuthentication();
+
             app.UseSwagger();
 
             if (env.IsDevelopment())

@@ -20,6 +20,9 @@ namespace Farm2CApi
 
             CreateMap<QuantityDto, Quantity>();
             CreateMap<Quantity, QuantityDto>();
+
+            CreateMap<UserInfoDto, UserInfo>();
+            CreateMap<UserInfo, UserInfoDto>();
         }
 
     }

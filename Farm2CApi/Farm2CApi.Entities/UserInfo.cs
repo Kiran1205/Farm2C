@@ -12,6 +12,7 @@ namespace Farm2CApi.Entities
 
         public string PhoneNumber { get; set; }
 
+        public string UserPassword { get; set; }
         public override bool Equals(object obj)
         {
             return obj is UserInfo info &&
