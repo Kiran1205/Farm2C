@@ -8,19 +8,19 @@ namespace Farm2CApi.Entities
         [Key]
         public int InvocieID { get; set; }
 
-        public int InvoiceNumber { get; set; }
+        public string InvoiceNumber { get; set; }
 
         public int UserID { get; set; }
 
         public int AddressID { get; set; }
 
-        public decimal TotalAmount { get; set; }
+        public double TotalAmount { get; set; }
 
-        public decimal Discount { get; set; }
+        public double Discount { get; set; }
 
         public int CoupounId { get; set; }
 
-        public Guid InvoiceItemListID { get; set; }
+        public string InvoiceItemListID { get; set; }
 
         public override bool Equals(object obj)
         {

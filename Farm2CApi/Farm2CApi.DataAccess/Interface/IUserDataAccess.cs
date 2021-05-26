@@ -12,5 +12,9 @@ namespace Farm2CApi.DataAccess.Interface
         UserInfo GetUserInfoByPassword(string PhoneNumber, string password);
 
         UserInfo RegisterUserInfo(UserInfo userInfo);
+
+        UserAddress SaveUserAddress(UserAddress userInfo);
+
+        List<UserAddress> LoadUserAddress(int UserInfoID);
     }
 }

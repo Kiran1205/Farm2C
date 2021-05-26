@@ -9,6 +9,10 @@ namespace Farm2CApi.Service.Interface
 
         ItemDto SaveItem(ItemDto itemsDto);
 
-        BasketDto GetBasketSelectedItems(List<string> itemPriceList);
+        BasketDto GetBasketSelectedItems(int userId);
+        int RemoveItemInBasket(int UserBasketID);
+        List<UserBasketDto> GetBasketItems(int userId);
+        UserBasketDto SaveItemInBasket(UserBasketDto userBasket);
+        string PlaceOrder(int UserInfoID, int useraddressId);
     }
 }

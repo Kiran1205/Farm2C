@@ -23,6 +23,12 @@ namespace Farm2CApi
 
             CreateMap<UserInfoDto, UserInfo>();
             CreateMap<UserInfo, UserInfoDto>();
+
+            CreateMap<UserBasket, UserBasketDto>();
+            CreateMap<UserBasketDto, UserBasket>();
+
+           CreateMap<UserAddress, UserAddressDto>();
+            CreateMap<UserAddressDto, UserAddress>();
         }
 
     }

@@ -49,10 +49,8 @@ namespace Farm2CApi.Service
                        var selectedunit = units.Where(x => x.UnitID == selectedQty.UnitID).First();
                        price.PriceCode = selectedQty.QuantityType + " " + selectedunit.UnitName;
                     }
-                }
+                }              
                
-                //dto.ListQunatityDto = _mapper.Map<List<QuantityDto>>(qunatitys);
-                //dto.ListUnitsDto = _mapper.Map<List<UnitsDto>>(units);
 
                 itemCategoryDtos.Add(dto);
             }
@@ -60,18 +58,21 @@ namespace Farm2CApi.Service
             return itemCategoryDtos;
         }
 
-        public BasketDto GetBasketSelectedItems(List<string> itemPriceList)
+        public BasketDto GetBasketSelectedItems(int userId)
         {
             var qunatitys = _ihomeDataAccess.GetQuantitys();
 
             var units = _ihomeDataAccess.GetUnits();
 
+            var basketItems = GetBasketItems(userId);
+
             BasketDto basketDto = new BasketDto();
            
-            foreach (var priceid in itemPriceList)
+            foreach (var basketItem in basketItems)
             {
                 BasketItemDto basketItemDto = new BasketItemDto();
-                var itemPrice = _ihomeDataAccess.GettItemPriceById(Convert.ToInt32(priceid));
+                basketItemDto.UserBasketID = basketItem.UserBasketID;
+                var itemPrice = _ihomeDataAccess.GettItemPriceById(basketItem.ItemPriceID);
 
                 var selectedQty = qunatitys.Where(x => x.QuantityID == itemPrice.QuantityID).First();
                 var selectedunit = units.Where(x => x.UnitID == selectedQty.UnitID).First();
@@ -94,10 +95,53 @@ namespace Farm2CApi.Service
 
             return basketDto;
         }
+
         public ItemDto SaveItem(ItemDto itemsDto)
         {
             var result = _ihomeDataAccess.SaveItem(_mapper.Map<Item>(itemsDto));
             return _mapper.Map<ItemDto>(result);
         }
+
+        public UserBasketDto SaveItemInBasket(UserBasketDto userBasket)
+        {
+            var result = _ihomeDataAccess.SaveItemInBasket(_mapper.Map<UserBasket>(userBasket));
+            return _mapper.Map<UserBasketDto>(result);
+        }
+        public int RemoveItemInBasket(int UserBasketID)
+        {
+           return _ihomeDataAccess.RemoveItemInBasket(UserBasketID);            
+        }
+        public List<UserBasketDto> GetBasketItems(int userId)
+        {
+            var result = _ihomeDataAccess.GetBasketCount(userId);
+            return _mapper.Map<List<UserBasketDto>>(result);
+        }
+        public string PlaceOrder(int UserInfoID, int useraddressId)
+        {
+            var basketItems = GetBasketItems(UserInfoID);
+
+            Invoice invoice = new Invoice();
+            invoice.AddressID = useraddressId;
+            invoice.InvoiceItemListID =  Guid.NewGuid().ToString();
+            invoice.UserID = UserInfoID;
+            List<InvoiceItemList> obj = new List<InvoiceItemList>();
+            invoice.InvoiceNumber = DateTime.Now.ToString("yyyyMMddHHmmss");
+            foreach (var basketItem in basketItems)
+            {
+                obj.Add(new InvoiceItemList()
+                {
+                    InvoiceItemListID = invoice.InvoiceItemListID,
+                    ItemPriceID = basketItem.ItemPriceID,
+                    NoOfUInits = 1
+                });
+                var itemPrice = _ihomeDataAccess.GettItemPriceById(basketItem.ItemPriceID);
+                invoice.TotalAmount += itemPrice.Price;
+            }
+           var  response = _ihomeDataAccess.SaveInvoice(invoice);
+            _ihomeDataAccess.SaveInvoiceItemList(obj);
+            _ihomeDataAccess.RemoveItemInBasketByUserId(UserInfoID);
+            return response.InvoiceNumber;
+        }
+
     }
 }

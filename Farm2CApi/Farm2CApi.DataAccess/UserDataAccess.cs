@@ -20,13 +20,13 @@ namespace Farm2CApi.DataAccess
         public UserInfo GetUserInfoByPhoneNumber(string PhoneNumber)
         {
             DynamicParameters dbparams = new DynamicParameters();
-            var results = _idapper.Get<UserInfo>($"select * from UserInfo where PhoneNumber = '{PhoneNumber}'", dbparams, System.Data.CommandType.Text);
+            var results = _idapper.Get<UserInfo>($"select * from dbo.UserInfo where PhoneNumber = '{PhoneNumber}'", dbparams, System.Data.CommandType.Text);
             return results;
         }
         public UserInfo GetUserInfoByPassword(string PhoneNumber,string password)
         {
             DynamicParameters dbparams = new DynamicParameters();
-            var results = _idapper.Get<UserInfo>($"select * from UserInfo where PhoneNumber = '{PhoneNumber}' and UserPassword='{password}'", dbparams, System.Data.CommandType.Text);
+            var results = _idapper.Get<UserInfo>($"select * from dbo.UserInfo where PhoneNumber = '{PhoneNumber}' and UserPassword='{password}'", dbparams, System.Data.CommandType.Text);
             return results;
         }
         public UserInfo RegisterUserInfo(UserInfo userInfo)
@@ -35,5 +35,20 @@ namespace Farm2CApi.DataAccess
             _farm2CEntities.SaveChanges();
             return userInfo;
         }
+
+        public UserAddress SaveUserAddress(UserAddress userInfo)
+        {
+            _farm2CEntities.UserAddress.Add(userInfo);
+            _farm2CEntities.SaveChanges();
+            return userInfo;
+        }
+        public List<UserAddress> LoadUserAddress(int UserInfoID)
+        {
+            DynamicParameters dbparams = new DynamicParameters();
+            var results = _idapper.GetAll<UserAddress>($"select * from dbo.UserAddress where UserInfoID = '{UserInfoID}'", dbparams, System.Data.CommandType.Text);
+            return results;
+        }
+
+       
     }
 }

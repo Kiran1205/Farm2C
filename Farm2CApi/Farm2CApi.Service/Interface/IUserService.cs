@@ -13,6 +13,8 @@ namespace Farm2CApi.Service.Interface
 
         UserInfoDto RegisterUserInfo(UserInfoDto userInfoDto);
 
+        UserAddressDto SaveUserAddress(UserAddressDto userAddressDto);
 
+        List<UserAddressDto> LoadUserAddress(int userId);
     }
 }

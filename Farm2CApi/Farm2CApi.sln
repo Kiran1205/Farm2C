@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farm2CApi.Entities", "Farm2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farm2CApi.Dtos", "Farm2CApi.Dtos\Farm2CApi.Dtos.csproj", "{DE7579B5-2ECC-4DE6-98AA-7E09645ADAB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupportUti", "SupportUti\SupportUti.csproj", "{07199DEA-579C-4CE8-84D7-A9DCACD7D740}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,14 +97,6 @@ Global
 		{DE7579B5-2ECC-4DE6-98AA-7E09645ADAB1}.Release|x64.Build.0 = Release|x64
 		{DE7579B5-2ECC-4DE6-98AA-7E09645ADAB1}.Release|x86.ActiveCfg = Release|x86
 		{DE7579B5-2ECC-4DE6-98AA-7E09645ADAB1}.Release|x86.Build.0 = Release|x86
-		{07199DEA-579C-4CE8-84D7-A9DCACD7D740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07199DEA-579C-4CE8-84D7-A9DCACD7D740}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07199DEA-579C-4CE8-84D7-A9DCACD7D740}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{07199DEA-579C-4CE8-84D7-A9DCACD7D740}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{07199DEA-579C-4CE8-84D7-A9DCACD7D740}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07199DEA-579C-4CE8-84D7-A9DCACD7D740}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07199DEA-579C-4CE8-84D7-A9DCACD7D740}.Release|x64.ActiveCfg = Release|Any CPU
-		{07199DEA-579C-4CE8-84D7-A9DCACD7D740}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

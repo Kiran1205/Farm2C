@@ -23,5 +23,18 @@ namespace Farm2CApi.DataAccess.Interface
         ItemPrice GettItemPriceById(int ItemPriceId);
 
         Item GetItemById(int ItemId);
+
+        UserBasket SaveItemInBasket(UserBasket userBasket);
+
+        List<UserBasket> GetBasketCount(int userId);
+
+        int RemoveItemInBasket(int userBasketId);
+
+        void RemoveItemInBasketByUserId(int userId);
+
+        Invoice SaveInvoice(Invoice invoice);
+
+        void SaveInvoiceItemList(List<InvoiceItemList> invoicelist);
+
     }
 }

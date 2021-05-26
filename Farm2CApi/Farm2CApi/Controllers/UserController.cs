@@ -42,6 +42,22 @@ namespace Farm2CApi.Controllers
             var list = _IUserService.RegisterUserInfo(userInfoDto);
             return Ok(list);
         }
+
+        [HttpPost]
+        [Route("saveuseraddress")]
+        public IActionResult SaveUserAddress([FromBody] UserAddressDto userAddressDto)
+        {
+            var list = _IUserService.SaveUserAddress(userAddressDto);
+            return Ok(list);
+        }
+
+        [HttpGet]
+        [Route("loaduseraddress")]
+        public IActionResult loaduserAddress(int userInfoId)
+        {
+            var list = _IUserService.LoadUserAddress(userInfoId);
+            return Ok(list);
+        }
     }
         
 }

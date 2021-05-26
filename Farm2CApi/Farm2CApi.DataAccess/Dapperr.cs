@@ -26,7 +26,8 @@ namespace Farm2CApi.DataAccess
 
         public int Execute(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
         {
-            throw new NotImplementedException();
+            using IDbConnection db = new SqlConnection(_config.GetConnectionString(Connectionstring));
+            return db.Execute(sp, parms, commandType: commandType);
         }
 
         public T Get<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.Text)

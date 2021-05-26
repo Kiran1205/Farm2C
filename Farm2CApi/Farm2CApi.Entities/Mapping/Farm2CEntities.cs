@@ -16,6 +16,15 @@ namespace Farm2CApi.Entities.Mapping
         public virtual DbSet<Quantity> Quantity { get; set; }
 
         public virtual DbSet<UserInfo> UserInfo { get; set; }
+
+        public virtual DbSet<UserBasket> UserBasket { get; set; }
+
+        public virtual DbSet<UserAddress> UserAddress { get; set; }
+
+        public virtual DbSet<Invoice> Invoice { get; set; }
+
+        public virtual DbSet<InvoiceItemList> InvoiceItemList { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

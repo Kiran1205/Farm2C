@@ -5,8 +5,9 @@ namespace Farm2CApi.Entities
 {
     public class InvoiceItemList
     {
-        
-        public Guid InvoiceItemListID { get; set; }
+        [Key]
+        public int InvoiceUniqId { get; set; }
+        public string InvoiceItemListID { get; set; }
 
       
         public int ItemPriceID { get; set; }

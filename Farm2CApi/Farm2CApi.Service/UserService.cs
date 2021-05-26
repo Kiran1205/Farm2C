@@ -3,6 +3,8 @@ using Farm2CApi.DataAccess.Interface;
 using Farm2CApi.Dtos;
 using Farm2CApi.Entities;
 using Farm2CApi.Service.Interface;
+using System.Collections.Generic;
+
 namespace Farm2CApi.Service
 {
     public class UserService : IUserService
@@ -46,6 +48,17 @@ namespace Farm2CApi.Service
 
             return _mapper.Map<UserInfoDto>(userInfo);
         }
+        public UserAddressDto SaveUserAddress(UserAddressDto userAddressDto)
+        {
 
+            var userAddressdto = _IUserDataAccess.SaveUserAddress(_mapper.Map<UserAddress>(userAddressDto));           
+
+            return _mapper.Map<UserAddressDto>(userAddressdto);
+        }
+        public List<UserAddressDto> LoadUserAddress(int userId)
+        {
+            var result = _IUserDataAccess.LoadUserAddress(userId);
+            return _mapper.Map<List<UserAddressDto>>(result);
+        }        
     }
 }

@@ -12,7 +12,7 @@ namespace SupportUti
     {
         static void Main(string[] args)
         {
-            string imagepasth = @"C:\Users\Admin\Downloads\testEggs.jpg";
+            string imagepasth = @"E:\Farm2CApi\Farm2CIonic\src\assets\images\chicken.jpg";
            
             using (Image image = Image.FromFile(imagepasth))
             {

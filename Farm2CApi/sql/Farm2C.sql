@@ -78,24 +78,26 @@ EndDate DateTime not null,
 DefaultSelection bit
 )
 go
-
+drop table InvoiceItemList
 create table InvoiceItemList
 (
-InvoiceItemListID uniqueidentifier  not null,
+InvoiceUniqId int not null identity,
+InvoiceItemListID nvarchar(100)  not null,
 ItemPriceID int not null,
 NoOfUInits int not null,
 )
 Go
+drop table Invoice
 create  Table Invoice
 (
 InvocieID int not null identity,
-InvoiceNumber int not null,
+InvoiceNumber nvarchar(50) not null,
 UserID int not null,
 AddressID int not null,
 TotalAmount Decimal not null,
-Discount Decimal not Null,
-CoupounId int not null,
-InvoiceItemListID uniqueidentifier  not null
+Discount Decimal  Null,
+CoupounId int  null,
+InvoiceItemListID  nvarchar(100)  not null
 )
 go
 create table UserInfo
@@ -106,13 +108,14 @@ PhoneNumber varchar(20),
 UserPassword varchar(max),
 )
 GO
+drop  table UserAddress
 Create table UserAddress
 (
 UserAddressID int not null identity,
 UserInfoID int not null,
 Name varchar(50) not null,
 PhoneNumber varchar(20) not null,
-AlternatePhoneNumber varchar(20) not null,
+AlternatePhoneNumber varchar(20)  null,
 PinCode int not null,
 Address nvarchar(max),
 Address1 nvarchar(max),
@@ -120,4 +123,10 @@ State varchar(50),
 LandMark varchar(50),
 DefaultAddress BIT,
 IsActive BIT
+)
+CREATE Table UserBasket
+(
+UserBasketID int not null identity,
+UserInfoID int not null,
+ItemPriceID int not null
 )

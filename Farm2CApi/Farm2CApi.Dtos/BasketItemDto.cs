@@ -4,6 +4,7 @@ namespace Farm2CApi.Dtos
 {
     public class BasketItemDto
     {
+        public int UserBasketID { get; set; }
         public int ItemPriceId { get; set; }
         public int ItemId { get; set; }
         public string ItemName { get; set; }

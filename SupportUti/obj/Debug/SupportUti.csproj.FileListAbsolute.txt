@@ -1,0 +1,14 @@
+E:\Farm2CApi\Farm2CApi\SupportUti\bin\Debug\SupportUti.exe.config
+E:\Farm2CApi\Farm2CApi\SupportUti\bin\Debug\SupportUti.exe
+E:\Farm2CApi\Farm2CApi\SupportUti\bin\Debug\SupportUti.pdb
+E:\Farm2CApi\Farm2CApi\SupportUti\obj\Debug\SupportUti.csprojAssemblyReference.cache
+E:\Farm2CApi\Farm2CApi\SupportUti\obj\Debug\SupportUti.csproj.CoreCompileInputs.cache
+E:\Farm2CApi\Farm2CApi\SupportUti\obj\Debug\SupportUti.exe
+E:\Farm2CApi\Farm2CApi\SupportUti\obj\Debug\SupportUti.pdb
+E:\Farm2CApi\SupportUti\bin\Debug\SupportUti.exe.config
+E:\Farm2CApi\SupportUti\bin\Debug\SupportUti.exe
+E:\Farm2CApi\SupportUti\bin\Debug\SupportUti.pdb
+E:\Farm2CApi\SupportUti\obj\Debug\SupportUti.csprojAssemblyReference.cache
+E:\Farm2CApi\SupportUti\obj\Debug\SupportUti.csproj.CoreCompileInputs.cache
+E:\Farm2CApi\SupportUti\obj\Debug\SupportUti.exe
+E:\Farm2CApi\SupportUti\obj\Debug\SupportUti.pdb
