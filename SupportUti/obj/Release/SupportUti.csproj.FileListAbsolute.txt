@@ -1,7 +1,0 @@
-E:\Farm2CApi\Farm2CApi\SupportUti\bin\Release\SupportUti.exe.config
-E:\Farm2CApi\Farm2CApi\SupportUti\bin\Release\SupportUti.exe
-E:\Farm2CApi\Farm2CApi\SupportUti\bin\Release\SupportUti.pdb
-E:\Farm2CApi\Farm2CApi\SupportUti\obj\Release\SupportUti.csprojAssemblyReference.cache
-E:\Farm2CApi\Farm2CApi\SupportUti\obj\Release\SupportUti.csproj.CoreCompileInputs.cache
-E:\Farm2CApi\Farm2CApi\SupportUti\obj\Release\SupportUti.exe
-E:\Farm2CApi\Farm2CApi\SupportUti\obj\Release\SupportUti.pdb
